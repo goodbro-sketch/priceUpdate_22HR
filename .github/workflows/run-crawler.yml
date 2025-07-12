@@ -2,7 +2,8 @@ name: Run Playwright Crawler Daily
 
 on:
   schedule:
-    - cron: "30 * * * *"
+    - cron: "30 0,1,2,3,4,5 * * *" # UTC 자정~5시 → KST 오전 9시~14시
+    - cron: "30 6-23 * * *" # 나머지 시간대
   workflow_dispatch:
 
 concurrency:
